@@ -25,9 +25,9 @@ class Device(BaseModel):
 
 
 #Creating a starting list of Devices to  manipulate
-device1 = Device(id=1, deviceName="RTR_UBS_Core_1", ip="192.168.0.1")
-device2 = Device(id=2, deviceName="RTR_UBS_Dist_1", ip="192.168.0.2")
-device3 = Device(id=3, deviceName="SW_UBS_Acc_1", ip="192.168.0.3")
+device1 = Device(id=1, deviceName="RTR_Core_1", ip="192.168.0.1")
+device2 = Device(id=2, deviceName="RTR_Dist_1", ip="192.168.0.2")
+device3 = Device(id=3, deviceName="SW_Acc_1", ip="192.168.0.3")
 deviceList = [device1, device2, device3]
 
 
