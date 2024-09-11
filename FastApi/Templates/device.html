@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+
+<tr class="tableRow">
+        <td hx-get="/devices/edit/{{device.id}}" hx-target="closest tr" hx-swap="outerHTML">
+            <h3>{{ device.deviceName }}</h3>
+            <p> {{ device.ip }}</p>
+        </td>
+        <td class="buttons">
+            <button hx-on:click="alert('Pinging {{device.ip}}')" style="background-color: #008000;">  Ping </button>
+            <button hx-on:click="console.log('Device Removed', event)" hx-delete="/devices/{{device.id}}" hx-target="closest tr" hx-swap="outerHTML"> Delete </button>
+        </td>
+</tr>

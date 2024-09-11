@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>UBS Change Log #12345 </title>
+       <script src="https://unpkg.com/htmx.org@2.0.2" integrity="sha384-Y7hw+L/jvKeWIRRkqWYfPcvVxHzVzn5REgzbawhxAuQGwX1XWe70vji+VSeHOThJ" crossorigin="anonymous"></script>
+      <link rel="stylesheet" href="{{ url_for('static', path='styles.css') }}">
+    </head>
+    <body>
+      <header>
+        <h1>UBS Change Log #12345 </h1>
+      </header>
+
+      <main>
+          <div class="search">
+            <input
+                  type="search"
+                  name="searchEntry"
+                  placeholder="Search by Device"
+                  hx-post="/devices/search"
+                  hx-trigger="keyup changed delay: 350ms"
+                  hx-target=".device-list"
+            />
+          </div>
+        <div class="device-list">
+            <button style="background-color:#000080;"hx-get="/devices" hx-swap="innerHTML" hx-target=".device-list"> Show Devices </button>
+
+        </div>
+
+        <div class="add-device-form">
+          <h2>What device do you want to add?</h2>
+            <form
+                    hx-on::after-request="document.querySelector('form').reset()"
+                    hx-post="/devices" hx-target=".device-list table"
+                    hx-swap="beforeend">
+
+                <input type="text" id="deviceName" name="deviceName" placeholder="Device" required/>
+                <input type="text" id="ip" name="ip" placeholder="IP Address" required/>
+                <button style="background-color:#000080; "> Add Device </button>
+            </form>
+
+        </div>
+      </main>
+    </body>
+</html>

@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+    <tr><td>
+    <form hx-put="/devices/{{device.id}}" hx-target="closest tr" hx-swap="outerHTML">
+    <input type="text" id="deviceName" name="deviceName" placeholder="Device" required value="{{device.deviceName}}"/>
+    <input type="text" id="ip" name="ip" placeholder="IP Address" required value="{{device.ip}}"/>
+    <button> Confirm </button>
+    </form>
+    </td>
+    </tr>
